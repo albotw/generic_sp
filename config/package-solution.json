@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "generic-sp-client-side-solution",
+    "id": "0a5219d5-eca5-4e05-9111-c67ec65f978d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "generic-sp description"
+      },
+      "longDescription": {
+        "default": "generic-sp description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "generic-sp Feature",
+        "description": "The feature that activates elements of the generic-sp solution.",
+        "id": "a99050f1-dd05-4f16-885c-5e803a28ff94",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/generic-sp.sppkg"
+  }
+}
