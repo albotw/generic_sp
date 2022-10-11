@@ -39,3 +39,19 @@ jobs:
         
       - name: Package
         run: gulp package-solution --ship
+        
+      - name: Upload sppkg
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: sppkg
+          path: ./sharepoint/solution/generic-sp.sppkg
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download sppkg
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: sppkg
+          path: ./
