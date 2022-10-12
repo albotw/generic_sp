@@ -65,4 +65,4 @@ jobs:
       - name: Authentication
         run: m365 login --authType password --userName ${{ secrects.O365_LOGIN }} --password ${{ secrets.O365_PASSWORD }}
       - name: Deploy
-        run: m365 spo app deploy --name generic-sp.sppkg --appCatalogUrl ${{ secrets.catalogURL }}
+        run: m365 spo app deploy --name generic-sp.sppkg --appCatalogUrl ${{ secrets.CATALOGURL }}
