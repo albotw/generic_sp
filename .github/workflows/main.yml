@@ -63,6 +63,6 @@ jobs:
       - name: Install Office 365 CLI
         run: npm install -g @pnp/cli-microsoft365
       - name: Authentication
-        run: m365 login --authType password --userName ${{ secrects.O365_LOGIN }} --password ${{ secrets.O365_PASSWORD }}
+        run: m365 login --authType password --userName ${{ secrets.O365_LOGIN }} --password ${{ secrets.O365_PASSWORD }}
       - name: Deploy
         run: m365 spo app deploy --name generic-sp.sppkg --appCatalogUrl ${{ secrets.CATALOGURL }}
