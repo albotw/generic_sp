@@ -43,7 +43,7 @@ jobs:
       - name: Upload sppkg
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: sppkg
+          name: generic-sp.sppkg
           path: ./sharepoint/solution/generic-sp.sppkg
   
   deploy:
@@ -53,5 +53,16 @@ jobs:
       - name: Download sppkg
         uses: actions/download-artifact@v3.0.0
         with:
-          name: sppkg
+          name: generic-sp.sppkg
           path: ./
+      - name: Install NodeJS
+        uses: actions/setup-node@v3.5.0
+        with:
+            node-version: 16.13.0
+            cache: npm
+      - name: Install Office 365 CLI
+        run: npm install -g @pnp/cli-microsoft365
+      - name: Authentication
+        run: m365 login --authType password --userName ${{ secrects.O365_LOGIN }} --password ${{ secrets.O365_PASSWORD }}
+      - name: Deploy
+        run: m365 spo app deploy --name generic-sp.sppkg --appCatalogUrl ${{ secrets.catalogURL }}
